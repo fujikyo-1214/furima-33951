@@ -58,7 +58,7 @@ belongs_to :purchase_record
 | Column | Type       | Options     |
 | ------ | ---------- | ----------- |
 | user   | references | null: false |
-| items  | references | null: false |
+| item   | references | null: false |
 
 ### Association
 

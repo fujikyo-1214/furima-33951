@@ -8,6 +8,6 @@ class User < ApplicationRecord
   validates :first_name, presence: true
   validates :last_name, presence: true
   validates :kana_first_name, presence: true
-  validates :kama_last_name, presence: true
+  validates :kana_last_name, presence: true
   validates :birthday, presence: true
 end

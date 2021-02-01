@@ -1,5 +1,6 @@
 class Item < ApplicationRecord
   belongs_to :user
+  has_one_attached :image
 
   with_options presence: true do
   validates :item_name
@@ -10,4 +11,5 @@ class Item < ApplicationRecord
   validates :prefecture_id
   validatas :arrival_day_id
   validatas :plice
+  validates :image
 end

@@ -9,7 +9,8 @@ class Item < ApplicationRecord
   validates :condition_id
   validates :shipping_cost_id
   validates :prefecture_id
-  validatas :arrival_day_id
-  validatas :plice
+  validates :arrival_day_id
+  validates :plice
   validates :image
+  end
 end

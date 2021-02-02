@@ -15,7 +15,7 @@ class Item < ApplicationRecord
   validates :shipping_cost_id
   validates :prefecture_id
   validates :arrival_day_id
-  validates :plice
+  validates :plice, length: { in: 300..9999999 }, format: { with: /\A[0-9]+\z/ }
   validates :image
   end
 end

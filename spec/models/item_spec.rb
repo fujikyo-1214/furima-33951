@@ -10,10 +10,6 @@ RSpec.describe Item, type: :model do
       it "item_name,item_explanation,category_id,condition_id,shipping_cost_id,prefecture_id,arrival_day_id,price,imageが存在すれば登録できる" do
         expect(@item).to be_valid
       end
-      it "priceが半角数字であれば登録できる" do
-        @item.price
-        expect(@item).to be_valid
-      end
     end
     context "出品出来ないとき" do
       it "item_nameが空では登録できない" do 

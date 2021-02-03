@@ -26,30 +26,30 @@ RSpec.describe Item, type: :model do
         @item.valid?
         expect(@item.errors.full_messages).to include("Item explanation can't be blank")
       end
-      it "category_idが空では登録できない" do
-        @item.category_id = nil
+      it "category_idが1では登録できない" do
+        @item.category_id = 1
         @item.valid?
-        expect(@item.errors.full_messages).to include("Category can't be blank")
+        expect(@item.errors.full_messages).to include("Category Select")
       end
-      it "condition_idが空では登録できない" do
-        @item.condition_id = nil
+      it "condition_idが1では登録できない" do
+        @item.condition_id = 1
         @item.valid?
-        expect(@item.errors.full_messages).to include("Condition can't be blank")
+        expect(@item.errors.full_messages).to include("Condition Select")
       end
-      it "shipping_cost_idが空では登録できない" do
-        @item.shipping_cost_id = nil
+      it "shipping_cost_idが1では登録できない" do
+        @item.shipping_cost_id = 1
         @item.valid?
-        expect(@item.errors.full_messages).to include("Shipping cost can't be blank")
+        expect(@item.errors.full_messages).to include("Shipping cost Select")
       end
-      it "prefecture_id" do
-        @item.prefecture_id = nil
+      it "prefecture_idが1では登録できない" do
+        @item.prefecture_id = 1
         @item.valid?
-        expect(@item.errors.full_messages).to include("Prefecture can't be blank")
+        expect(@item.errors.full_messages).to include("Prefecture Select")
       end
-      it "arrival_day_id" do
-        @item.arrival_day_id = nil
+      it "arrival_day_idが1では登録できない" do
+        @item.arrival_day_id = 1
         @item.valid?
-        expect(@item.errors.full_messages).to include("Arrival day can't be blank")
+        expect(@item.errors.full_messages).to include("Arrival day Select")
       end
       it "priceが空では登録できない" do
         @item.price = nil

@@ -35,7 +35,7 @@ has_many :purchase_records
 ### Association
 
 belongs_to :user
-has_one    : purchase_record
+has_one    :purchase_record
 
 ## addressテーブル
 

@@ -36,7 +36,7 @@ class PurchaseRecordsController < ApplicationController
   def move_to_item_index
     @item = Item.find(params[:item_id])
     if @item.user.id == current_user.id || @item.purchase_record.present?
-      edirect_to root_path
+      redirect_to root_path
     end
   end
 end

@@ -1,6 +1,6 @@
 class PurchaseRecordsController < ApplicationController
   before_action :authenticate_user!, only: :index
-  before_action :move_to_item_index, only: :index
+  before_action :move_to_item_index, only: [:index, :create]
   def index
     @item = Item.find(params[:item_id])
     @purchase_record_address = PurchaseRecordAddress.new

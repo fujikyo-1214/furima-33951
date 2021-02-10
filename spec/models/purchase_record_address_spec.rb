@@ -6,7 +6,7 @@ RSpec.describe PurchaseRecordAddress, type: :model do
   end
   describe '商品購入' do
     context '購入できるとき' do
-      it 'post_number,prefecture_id,area,area_number,number,tokenが存在すれば登録できる' do
+      it 'post_number,prefecture_id,area,area_number,number,token,user_id,item_idが存在すれば登録できる' do
       expect(@purchase_record).to be_valid
       end
       it 'buildingが空でも登録できる' do
@@ -50,10 +50,25 @@ RSpec.describe PurchaseRecordAddress, type: :model do
         @purchase_record.valid?
         expect(@purchase_record.errors.full_messages).to include("Number Input only number")
       end
+      it "numberは英数混合では登録できない" do
+        @purchase_record.number = "090r1234-2"
+        @purchase_record.valid?
+        expect(@purchase_record.errors.full_messages).to include("Number is not a number")
+      end
       it "tokenが空では登録できないこと" do
         @purchase_record.token = nil
         @purchase_record.valid?
         expect(@purchase_record.errors.full_messages).to include("Token can't be blank")
+      end
+      it "user_idが空では登録できない" do
+        @purchase_record.user_id = nil
+        @purchase_record.valid?
+        expect(@purchase_record.errors.full_messages).to include("User can't be blank")
+      end
+      it "item_idが空では登録できない" do
+        @purchase_record.item_id = nil
+        @purchase_record.valid?
+        expect(@purchase_record.errors.full_messages).to include("Item can't be blank")
       end
     end
   end
